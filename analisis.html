@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFCM</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="contenedor">
+            <div class="barra">
+
+                <a href="index.html" class="logo">
+                    <h1 class="logo__nombre no-margin centrar-texto">Tecnicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+    
+                <nav class="navegacion">
+                    <a href="pics.html" class="navegacion_enlace">PICS</a>
+                    <a href="picm.html" class="navegacion_enlace">PICM</a>
+                    <a href="pfcs.html" class="navegacion_enlace">PFCS</a>
+                    <a href="pfcm.html" class="navegacion_enlace">PFCM</a>
+                    <a href="analisis.html" class="navegacion_enlace">Analisis</a>
+                </nav>
+            </div>
+      
+        </div>
+        
+        <div class="header__texto">
+            <h2 class="no-margin">ANÁLISIS ECONÓMICO</h2>
+        </div>
+    </header>
+    
+        <main class="contenedor">
+            <h4>Ingrese los valores </h4>
+
+            <form class="formulario2" onsubmit="return false">
+
+                <div class="campo">
+                    <label class="campo__label" for="lambda">Tasa de llegada λ: </label>                    
+                    <input 
+                        class="campo__field"
+                        id="lambda" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="laborables">Horas Laborables: </label>                    
+                    <input 
+                        class="campo__field"
+                        id="laborables" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="wq">Wq :</label>                    
+                    <input 
+                        class="campo__field"
+                        id="wq" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label class="campo__label" for="Cte">Costo Unitario por Tiempo en Cola C<sub>Te</sub> </label>                    
+                    <input 
+                        class="campo__field"
+                        id="Cte" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="W">W =</label>                    
+                    <input 
+                        class="campo__field"
+                        id="W" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+                <div class="campo">
+                        <label class="campo__label" for="Cts">Costo Unitario por Tiempo en el Sistema C<sub>Ts</sub> </label>                    
+                        <input 
+                        class="campo__field"
+                        id="Cts" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label class="campo__label" for="miu">Tasa de servicio μ =</label>                    
+                    <input 
+                    class="campo__field"
+                    id="miu" 
+                    type="number" 
+                    step="0.1"
+                    placeholder="Ingrese el valor"
+                >
+                </div>
+
+
+                <div class="campo">
+                    <label class="campo__label" for="Ctse">Costo Unitario por Tiempo de Servicio C<sub>TSE</sub> </label>                    
+                    <input 
+                    class="campo__field"
+                    id="Ctse" 
+                    type="number" 
+                    step="0.1"
+                    placeholder="Ingrese el valor"
+                >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="k">Servidores K =</label>                    
+                    <input 
+                    class="campo__field"
+                    id="k" 
+                    type="number" 
+                    step="0.1"
+                    placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="Cs">Costo Unitario por el Servidor: C<sub>s</sub> </label>                    
+                    <input 
+                    class="campo__field"
+                    id="Cs" 
+                    type="number" 
+                    step="0.1"
+                    placeholder="Ingrese el valor"
+                >
+                </div>
+
+            </form>
+             
+            <div class="campo campo__boton">                
+                <input type="submit" value="calcular" class="boton boton--secundario" id="botonAnalisis">
+            </div>
+
+
+            <h3>Resultados:</h3>
+            
+            <form class="formulario_respuestas" onsubmit="return false" id="formulario_respuestas" visible = false visibility = "hidden">
+
+
+                <!--PRIMERA FORMULA-->
+                
+                <p class="formulario_respuestas__p">
+                    Costo Diario por el Tiempo de Espera en Cola
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/analisis_img/CTte.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">CT<sub>TE</sub> =</label> 
+                    <label class="campo__label" for="" id="resultadoCTte"> </label>                   
+                </div>
+
+
+                 <!--Segunda FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Costo Diario por el Tiempo en el Sistema
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/analisis_img/CTts.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">CT<sub>TS</sub> =</label> 
+                    <label class="campo__label" for="" id="resultadoCTts"> </label>                   
+                </div>
+
+
+                  <!--Tercera FORMULA-->
+                
+                  <p class="formulario_respuestas__p">
+                    Costo Diario por el Tiempo de Servicio
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/analisis_img/CTtse.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">CT<sub>TSE</sub> =</label> 
+                    <label class="campo__label" for="" id="resultadoCTtse"> </label>                   
+                </div>
+
+
+                 <!--Cuarta FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Costo Diario del Servidor
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/analisis_img/CTs.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">CT<sub>S</sub> =</label> 
+                    <label class="campo__label" for="" id="resultadoCTs"> </label>                   
+                </div>
+
+
+
+                
+                 <!--Quinta FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Costo Diario del Servidor
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/analisis_img/CT.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">CT =</label> 
+                    <label class="campo__label" for="" id="resultadoCT"> </label>                   
+                </div>
+
+
+            
+        </main>
+
+
+        <footer class="footer">
+            <div class="contenedor">
+            
+                <a href="index.html" class="logo">
+                        <h1 class="logo__nombre no-margin centrar-texto">Tenicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+                
+            </div>
+        </footer>
+       
+        <script src="js/analisis.js"></script>
+</body>
+</html>

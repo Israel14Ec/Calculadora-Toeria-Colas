@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Etiquetas meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÉCNICAS DE SIMULACIÓN</title>
+    <meta name="description" content="Página web de blog de café">  <!--Una descripción del sitio web para el navegador-->
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!--Prefech: sirve para cargar anticipadamente un documento-->
+    <link rel="prefecth" href="nosotros.html" as="document">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="contenedor">
+            <div class="barra">
+
+                <a href="index.html" class="logo">
+                    <h1 class="logo__nombre no-margin centrar-texto">Tecnicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+    
+                <nav class="navegacion">
+                    <a href="pics.html" class="navegacion_enlace">PICS</a>
+                    <a href="picm.html" class="navegacion_enlace">PICM</a>
+                    <a href="pfcs.html" class="navegacion_enlace">PFCS</a>
+                    <a href="pfcm.html" class="navegacion_enlace">PFCM</a>
+                    <a href="analisis.html" class="navegacion_enlace">Analisis</a>
+                </nav>
+            </div>
+      
+        </div>
+        
+        <div class="header__texto">
+            <h2 class="no-margin">CALCULADORA - MODELOS DE TEORÍA DE COLAS</h2>
+        </div>
+    </header>
+    
+        <div class="contenedor contenido-principal">
+            <main class="blog">
+
+                <h3>MODELOS</h3>
+                
+                <article class="entrada">
+
+                    <div class="entrada__contenido">
+                        <h4 class="no-margin">PICS (POBLACIÓN INFINITA CANAL SIMPLE)</h4>
+                        <p>
+                            En este modelo en el que se asume que la población de clientes es infinita y que hay un solo canal de servicio disponible. 
+                            En este modelo, la llegada y el servicio de los clientes siguen una distribución exponencial y se asume que los 
+                            clientes forman una línea de espera en orden de llegada y son atendidos por el servidor uno a la vez en el orden 
+                            en que llegaron.  <br>
+                            Notación: M/M/1
+                        </p>
+                        <a href="pics.html" class="boton boton--primario">CALCULAR</a>
+                    </div>
+
+                </article>
+
+                <article class="entrada">
+
+                    <div class="entrada__contenido">
+                        <h4 class="no-margin">PICM (POBLACIÓN INFINITA CANAL MULTIPLE)</h4>
+                        <p>
+                            se utiliza a menudo para modelar sistemas de colas complejos en los que hay varios canales de servicio disponibles 
+                            en una organización, como un centro de llamadas, un aeropuerto o una tienda. El modelo se utiliza 
+                            para analizar cómo diferentes factores, como el número de canales de servicio y la tasa de llegada de los clientes, 
+                            afectan el tiempo de espera de los clientes y la tasa de servicio del sistema en general<br>
+                            Notación: M/M/K
+
+                        </p>
+                        <a href="picm.html" class="boton boton--primario">CALCULAR</a>
+                    </div>
+
+                </article>
+
+
+                <article class="entrada">
+
+                    <div class="entrada__contenido">
+                        <h4 class="no-margin">PFCS (POBLACIÓN FINITA CANAL SIMPLE)</h4>
+                        <p>
+                            En este modelo se asume que la población de clientes es finita y que hay un solo canal de servicio disponible.
+                            se utiliza a menudo para analizar el rendimiento de sistemas de colas en entornos con un número limitado de clientes 
+                            y muchos sistemas que pueden caber en un solo canal de servicio. <br>
+                            Notación:  M/M/1/M/M
+                        </p>
+                        <a href="pfcs.html" class="boton boton--primario">CALCULAR</a>
+                    </div>
+
+                </article>
+
+                <article class="entrada">
+
+                    <div class="entrada__contenido">
+                        <h4 class="no-margin">PFCM (POBLACIÓN FINITA CANAL MULTIPLE)</h4>
+                        <p>
+                            Se asume que la población de clientes es finita y que hay múltiples canales de servicio disponibles
+                            Este modelo es útil para entender cómo el tiempo de espera de los clientes se ve afectado por factores como 
+                            el número de canales de servicio disponibles, la tasa de llegada de los clientes y la capacidad de servicio de 
+                            los servidores. <br>
+                            Notación: M/M/k/M/M
+                        </p>
+                        <a href="pfcm.html" class="boton boton--primario">CALCULAR</a>
+                    </div>
+
+                </article>
+
+    
+            
+            </main>
+
+            <aside class="sidebar">
+                <h3>Lenguajes de simulación </h3>
+                <ul class="cursos no-padding">
+                    <li class="widget-curso">
+                        <h4 class="no-margin">SIMAN:</h4>
+                        <p class="widget-curso__label"> 
+                            Se utiliza para modelar sistemas complejos en una amplia variedad de industrias , incluyendo la fabricación, la 
+                            logística, los servicios y la salud. El lenguaje utiliza una orientación al proceso para modelar un sistema 
+                            particular, estudiando las entidades que se mueven a través del sistema y cómo interactúan entre sí.
+                        </p>
+                    </li>
+                </ul>
+
+                <ul class="cursos no-padding">
+                    <li class="widget-curso">
+                        <h4 class="no-margin">ARENA:</h4>
+                        <p class="widget-curso__label"> 
+                            Permite modelar, simular, analizar y optimizar sistemas complejos en una amplia variedad de industrias. 
+                            El software utiliza una interfaz gráfica del usuario para crear modelos de sistemas, incluyendo representaciones 
+                            visuales de los objetos, la lógica, el flujo de trabajo y los datos dentro del sistema.
+                        </p>
+                    </li>
+                </ul>
+
+
+            </aside>
+
+        </div>
+
+
+        <footer class="footer">
+            <div class="contenedor">
+            
+                <a href="index.html" class="logo">
+                        <h1 class="logo__nombre no-margin centrar-texto">Tenicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+                
+            </div>
+        </footer>
+       
+</body>
+</html>

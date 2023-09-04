@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFCM</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="contenedor">
+            <div class="barra">
+
+                <a href="index.html" class="logo">
+                    <h1 class="logo__nombre no-margin centrar-texto">Tecnicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+    
+                <nav class="navegacion">
+                    <a href="pics.html" class="navegacion_enlace">PICS</a>
+                    <a href="picm.html" class="navegacion_enlace">PICM</a>
+                    <a href="pfcs.html" class="navegacion_enlace">PFCS</a>
+                    <a href="pfcm.html" class="navegacion_enlace">PFCM</a>
+                    <a href="analisis.html" class="navegacion_enlace">Analisis</a>
+                </nav>
+            </div>
+      
+        </div>
+        
+        <div class="header__texto">
+            <h2 class="no-margin">POBLACIÓN FINITA CANAL MULTIPLE (PFCM)</h2>
+        </div>
+    </header>
+    
+        <main class="contenedor">
+            <h3>Ingreso de datos</h3>
+
+            <form class="formulario2" onsubmit="return false">
+
+                <div class="campo">
+                    <label class="campo__label" for="lambda">Tasa de llegada λ: </label>                    
+                    <input 
+                        class="campo__field"
+                        id="lambda" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="miu">Tasa de servicio μ:</label>                    
+                    <input 
+                        class="campo__field"
+                        id="miu" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="servidor">Servidores K:</label>                    
+                    <input 
+                        class="campo__field"
+                        id="servidor" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label class="campo__label" for="poblacion">Poblacion M:</label>                    
+                    <input 
+                        class="campo__field"
+                        id="poblacion" 
+                        type="number" 
+                        step="0.1"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                
+
+            </form>
+
+             
+            <div class="campo campo__boton">                
+                <input type="submit" value="calcular" class="boton boton--secundario" id="boton-pfcs">
+            </div>
+
+
+            <h3>Resultados:</h3>
+            
+            <form class="formulario_respuestas" onsubmit="return false" id="formulario_respuestas" visible = false visibility = "hidden">
+
+
+                <!--PRIMERA FORMULA-->
+                
+                <p class="formulario_respuestas__p">
+                    La probabilidad de hallar el sistema completamente vacío, de que todos los servidores estén
+                    desocupados u ociosos a la vez:
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/P0.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">P<sub>0</sub> =</label> 
+                    <label class="campo__label" for="" id="respuestaP0"> </label>                   
+                </div>
+
+
+                 <!--Segunda FORMULA-->
+                
+                <p class="formulario_respuestas__p">
+                    La probabilidad de hallar exactamente n clientes dentro del sistema
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/Pna.png" alt="roN">
+                    <img src="/img/pfcm_img/Pnb.png" alt="roN">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="llegada">n</label>                    
+                    
+                    <input 
+                        class="campo__field"
+                        id="valorN" 
+                        type="number" 
+                        placeholder="Ingrese el valor de n"
+                    >
+
+                    <div class="campo">                
+                        <input type="submit" value="calcular" class="boton boton--secundario" id="btnRespuestaPn">
+                    </div>
+
+                    <label class="campo__label" for="">P<sub>n</sub> =</label>   
+                    <label class="campo__label" for="" id="respuestaPn"> </label>   
+                    
+                </div>
+
+
+
+                 <!--TERCERA FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Probabilidad de hallar el sistema completamente ocupado, de que un usuario que llega tenga
+                    que esperar, probabilidad de que haya k o más usuarios en el sistema
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/Pe.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">P<sub>E</sub> =</label> 
+                    <label class="campo__label" for="" id="respuestaPe"> </label>                   
+                </div>
+
+
+    
+                 <!--CUARTA FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Probabilidad de no esperar
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/Pne.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">P<sub>NE</sub> =</label> 
+                    <label class="campo__label" for="" id="respuestaPne"> </label>                   
+                </div>
+
+
+                 <!--QUINTA FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Número esperado de clientes en el sistema
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/L.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">L =</label> 
+                    <label class="campo__label" for="" id="respuestaL"> </label>                   
+                </div>
+
+
+
+                
+                 <!--SEXTA FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Número esperado de clientes en la cola
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/Lq.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">L<sub>q</sub> =</label> 
+                    <label class="campo__label" for="" id="respuestaLq"> </label>                   
+                </div>
+
+
+
+                  <!--SEPTIMA FORMULA-->
+                
+                  <p class="formulario_respuestas__p">
+                    Número esperado de clientes en la cola no vacía
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/Ln.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">L<sub>n</sub> =</label> 
+                    <label class="campo__label" for="" id="respuestaLn"> </label>                   
+                </div>
+
+
+                 <!--OCTAVA FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Tiempo esperado en el sistema
+
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/W.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">W =</label> 
+                    <label class="campo__label" for="" id="respuestaW"> </label>                   
+                </div>
+
+
+                 <!--NOVENA FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Tiempo esperado en cola
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/Wq.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">W<sub>q</sub> =</label> 
+                    <label class="campo__label" for="" id="respuestaWq"> </label>                   
+                </div>
+
+
+                
+                 <!--DECIMA FORMULA-->
+                
+                 <p class="formulario_respuestas__p">
+                    Tiempo esperado en cola para colas no vacías
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pfcm_img/Wn.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">W<sub>n</sub> =</label> 
+                    <label class="campo__label" for="" id="respuestaWn"> </label>                   
+                </div>
+
+
+                
+            </form>
+            
+        </main>
+
+
+        <footer class="footer">
+            <div class="contenedor">
+            
+                <a href="index.html" class="logo">
+                        <h1 class="logo__nombre no-margin centrar-texto">Tenicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+                
+            </div>
+        </footer>
+       
+        <script src="js/PFCM.js"></script>
+</body>
+</html>

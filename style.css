@@ -1,0 +1,283 @@
+:root{  /*Custom Propiertes*/
+
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: #241f1d;
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #7a2e89;
+}
+
+html{
+    box-sizing: border-box; /*borde/padding no afecta el ancho de los elementos*/
+    font-size: 62.5%; /*1 rem = 10px*/
+}
+
+
+*, *:before, *:after {  /*Selector universal*/
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuenteParrafos);
+    font-size: 1.65rem;
+    line-height: 2;
+}
+
+
+
+/*-----------Globales---------------*/
+
+.contenedor{
+    max-width: 100rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4{
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 6rem; /*Tamaño*/
+}
+h2{
+    font-size: 3.5rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+font-size: 2rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/*Utilidades*/
+
+.no-margin {
+    margin: 0;
+}
+.no-padding{
+    padding: 0;
+}
+.centrar-texto{
+    text-align: center;
+}
+
+
+/*Header*/
+
+.header{
+   
+    height: 28rem;
+    background-size: cover; /*Toma todo el espacio disponible*/
+    background-repeat: no-repeat; /*no se repite*/
+    background-position: center center; /*Posicion en X(center) e Y (center)*/
+    background-image: url(img/backRickandMorty.png);
+    opacity: 0.8;
+    
+}
+
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem; /*Separación, con respecto arriba*/
+}
+
+@media(min-width: 768px) {
+    .header__texto{
+        margin-top: 15rem;
+    }
+}
+
+.barra{
+    margin-top: 4rem;
+}
+
+@media(min-width: 768px) {
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo {
+    color: var(--blanco);
+}
+
+.logo__nombre {
+    font-weight: 400;
+
+}
+
+.logo__bold {
+    font-weight: 700;
+}
+
+
+@media(min-width: 768px) {
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.navegacion_enlace {
+    display: block;
+    text-align: center;
+    font-size: 2.4rem;
+    color: var(--blanco);
+}
+
+@media(min-width: 768px) {
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada {
+    border-bottom: 2px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton {
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+
+@media(min-width: 768px) {
+    .boton{
+        display: inline-block; /*toma lo que requiere*/
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.boton--primario{
+    background-color: var(--negro);
+}
+
+
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+.cursos{
+    list-style: none; /*Elimina la biñeta*/
+}
+
+.widget-curso{
+    border-bottom: 1px solid var(--gris);
+    padding-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{
+    border: none;
+    margin-bottom: 2rem;
+}
+
+
+.widget-curso__label{
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+}
+
+.widget-curso__info{
+    font-weight: 400;
+}
+
+.widget-curso__label,
+.widget-curso__info{
+    font-size: 1.5rem;
+}
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    display: grid;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 10rem;
+    display: flex;
+}
+
+.formulario2 {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 10rem 0 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media(min-width: 768px) {
+    .campo{
+        justify-content: space-between;
+    }
+}
+
+.campo{
+    margin-bottom: 2rem;
+    
+}
+
+.campo__label {
+    text-align: right;
+    padding-right: 2rem;
+    font-size: 2.5rem;
+}
+
+.campo__field {
+    flex: 3; /*factor de crecimiento*/
+    border: 1px solid var(--gris);
+    font-size: 1.75rem;
+}
+
+
+@media(min-width: 768px) {
+    .formulario_respuestas{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 2rem;
+        margin-bottom: 5rem;
+        
+    }    
+}
+
+.campo__boton {
+    text-align: center;
+}
+

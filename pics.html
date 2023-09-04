@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICS</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="contenedor">
+            <div class="barra">
+
+                <a href="index.html" class="logo">
+                    <h1 class="logo__nombre no-margin centrar-texto">Tecnicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+    
+                <nav class="navegacion">
+                    <a href="pics.html" class="navegacion_enlace">PICS</a>
+                    <a href="picm.html" class="navegacion_enlace">PICM</a>
+                    <a href="pfcs.html" class="navegacion_enlace">PFCS</a>
+                    <a href="pfcm.html" class="navegacion_enlace">PFCM</a>
+                    <a href="analisis.html" class="navegacion_enlace">Analisis</a>
+                
+                </nav>
+            </div>
+      
+        </div>
+        
+        <div class="header__texto">
+            <h2 class="no-margin">POBLACIÓN INFINITA CANAL SIMPLE (PICS)</h2>
+        </div>
+    </header>
+    
+        <main class="contenedor">
+            <h3>Ingreso de datos</h3>
+
+    
+            <form class="formulario" onsubmit="return false">
+                <div class="campo">
+                    <label class="campo__label" for="lambda">Tasa de llegada λ: </label>                    
+                    <input 
+                        class="campo__field"
+                        id="lambda" 
+                        type="number" 
+                        step="any"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="miu">Tasa de servicio μ:</label>                    
+                    <input 
+                        class="campo__field"
+                        id="miu" 
+                        type="number" 
+                        step="any"
+                        placeholder="Ingrese el valor"
+                    >
+                </div>
+
+            
+                <div class="campo">                
+                    <input type="submit" value="calcular" class="boton boton--secundario" id="boton-pics">
+                </div>
+
+            </form>
+
+
+            <h3>Resultados:</h3>
+            <form class="formulario_respuestas" onsubmit="return false" id="formulario_respuestas" visible = false visibility = "hidden">
+
+                <!--PRIMERA FORMULA-->
+
+                <p class="formulario_respuestas__p">
+                    Probabilidad de: Hallar el sistema ocupado, Utilización, esperar a ser atentidos
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pics_img/ro.png" alt="ro">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="">P =</label>    
+                    <label class="campo__label" for="" id="respuesta_ro"> </label>                
+                    
+                </div>
+
+
+                <!--SEGUNDA FORMULA-->
+                
+                <p class="formulario_respuestas__p">
+                    Probabilidad de: Hallar el sistema vacío, no esperar 
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pics_img/ro0.png" alt="ro0">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="llegada">P<sub>0</sub> =</label> 
+                    <label class="campo__label" for="" id="respuesta_ro0"> </label>                   
+                    
+
+                </div>
+
+
+                <!--Tercera Formula-->
+                <p class="formulario_respuestas__p">
+                    Probabilidad de n clientes dentro del sistema
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pics_img/roN.png" alt="roN">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="llegada">n</label>                    
+                    
+                    <input 
+                        class="campo__field"
+                        id="valorN" 
+                        type="number" 
+                        placeholder="Ingrese el valor de n"
+                    >
+
+                    <div class="campo">                
+                        <input type="submit" value="calcular" class="boton boton--secundario" id="btnRespuestaPn">
+                    </div>
+
+                    <label class="campo__label" for="llegada">P<sub>n</sub> =</label>   
+                    <label class="campo__label" for="" id="respuesta_Pn"> </label>   
+                    
+                </div>
+
+
+                 <!--Cuarta Formula-->
+
+                 <p class="formulario_respuestas__p">
+                    Número esperado de clientes en el sistema
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pics_img/L.png" alt="L">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="llegada">L =</label>                    
+                    <label class="campo__label" for="" id="respuesta_L"> </label> 
+                </div>
+
+                <!--Quinta Formula-->
+
+                <p class="formulario_respuestas__p">
+                    Número esperado de clientes en la cola
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pics_img/Lq.png" alt="Lq">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="llegada">L<sub>q</sub> =</label> 
+                    <label class="campo__label" for="" id="respuesta_Lq"> </label>                    
+                    
+                
+                </div>
+
+
+                <!--Sexta Formula-->
+
+                <p class="formulario_respuestas__p">
+                    Número esperado de clientes en la cola
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pics_img/Ln.png" alt="Ln">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="llegada">L<sub>n</sub> =</label>                    
+                    <label class="campo__label" for="" id="respuesta_Ln"> </label>   
+                    
+                </div>
+
+
+                  <!--Septima Formula-->
+
+                <p class="formulario_respuestas__p">
+                     Tiempo esperado en el sistema
+                </p>
+
+                <div class="formulario_respuestas__img">
+                    <img src="/img/pics_img/W.png" alt="W">
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="llegada">W = </label>   
+                    <label class="campo__label" for="" id="respuesta_W"> </label>                 
+                    
+                    
+                </div>
+
+
+                <!--Octava Formula-->
+
+                <p class="formulario_respuestas__p">
+                    Tiempo esperado en cola
+               </p>
+
+               <div class="formulario_respuestas__img">
+                   <img src="/img/pics_img/Wq.png" alt="Wq">
+               </div>
+
+               <div class="campo">
+                   <label class="campo__label" for="llegada">W<sub>q</sub> =</label>                    
+                   <label class="campo__label" for="" id="respuesta_Wq"> </label>  
+               </div>
+
+
+               <!--Novena Formula-->
+
+               <p class="formulario_respuestas__p">
+                Tiempo esperado en cola para colas no vacías
+           </p>
+
+           <div class="formulario_respuestas__img">
+               <img src="/img/pics_img/Wn.png" alt="Wq">
+           </div>
+
+           <div class="campo">
+               <label class="campo__label" for="llegada">W<sub>n</sub> =</label>             
+               <label class="campo__label" for="" id="respuesta_Wn"> </label>  
+               
+               
+           </div>
+
+               
+
+                
+
+            </form>
+            
+        </main>
+
+
+        <footer class="footer">
+            <div class="contenedor">
+            
+                <a href="index.html" class="logo">
+                        <h1 class="logo__nombre no-margin centrar-texto">Tenicas<span class="logo__bold">DeSimulacion</span></h1>
+                </a>
+                
+            </div>
+        </footer>
+       
+        <script src="js/PICS.js"></script>
+</body>
+</html>
